@@ -1,0 +1,1 @@
+alias AllTogether.{Repo,Recording}
