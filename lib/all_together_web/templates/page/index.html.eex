@@ -14,17 +14,8 @@
     <input type="file" name="my_file" multiple="multiple" />
   </form>
 
-  <script type="text/javascript">
-  var a = function() {
-    window.SoundManager.upload_url(window.SoundManager.getRecordName())
-  };
-  </script>
-
-  <button onclick="a()"> upload_url </button>
-
-
-  <button onclick="window.SoundManager.record(this)"> Hit it! </button>
-  <button onclick="window.SoundManager.stop()"> Stop! </button>
+  <button onclick="window.indexPage.startRecording()"> Hit it! </button>
+  <button onclick="window.indexPage.stopRecording()"> Stop! </button>
 
 <%#
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

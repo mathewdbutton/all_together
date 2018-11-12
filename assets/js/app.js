@@ -10,11 +10,9 @@ import css from "../css/app.css"
 // Import dependencies
 //
 import "phoenix_html"
-import sound_manager from "./soundmanager"
+import IndexPage from "./index_page"
 
-window.SoundManager = sound_manager;
-
-
+window.indexPage = IndexPage
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
