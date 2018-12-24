@@ -16,6 +16,11 @@ class IndexPage {
   static stopRecording() {
     SoundManager.stop();
   }
+
+  static playAllRecordings(){
+    let recordings = document.querySelectorAll(".record-container .recording");
+    SoundManager.play(recordings);
+  }
 }
 
 export default IndexPage

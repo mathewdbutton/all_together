@@ -3,43 +3,22 @@
   <p>A productive web framework that<br/>does not compromise speed and maintainability.</p>
 </section>
 
+  <div class="record-container">
   <%= for record <- @recordings do %>
-    <p><%= record.name %></p>
-    <audio src="https://s3-ap-southeast-2.amazonaws.com/all-together-now/<%= record.path %>" controls>
+    <p class="recording-name"><%= record.name %></p>
+    <audio class="recording" src="https://s3-ap-southeast-2.amazonaws.com/all-together-now/<%= record.path %>" controls>
     </audio>
   <% end %>
+  </div>
 
   <form id="csrf-tag" data-csrf="<%= @csrf %>" enctype="multipart/form-data" method="GET">
     <input type="text" id="record-name">
     <input type="file" name="my_file" multiple="multiple" />
   </form>
 
-  <button onclick="window.indexPage.startRecording()"> Hit it! </button>
-  <button onclick="window.indexPage.stopRecording()"> Stop! </button>
-
-<%#
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="//assets.transloadit.com/js/jquery.transloadit2-v3-latest.js"></script>
-  <script type="text/javascript">
-  $(function() {
-    $('form').transloadit({
-      wait: true,
-      autoSubmit: false,
-      triggerUploadOnFileSelection: true,
-      params: {
-        auth: {
-          // To avoid tampering use signatures:
-          // https://transloadit.com/docs/api/#authentication
-          key: 'b037b060da3d11e898013f4e22bb33a2',
-        },
-        template_id: "1145ba50da3e11e8957707ba9032499c",
-      },
-      onSuccess: (assembly) => {
-        window.SoundManager.add(assembly.uploads[0].url, window.SoundManager.getRecordName())
-      }
-    });
-  });
-  </script> %>
+  <button onclick="window.indexPage.playAllRecordings()"> Play All </button>
+  <button class="button-outline" onclick="window.indexPage.startRecording()"> Hit it! </button>
+  <button class="button-outline" onclick="window.indexPage.stopRecording()"> Stop! </button>
 
 <section class="row">
   <article class="column">

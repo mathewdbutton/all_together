@@ -4,11 +4,9 @@ import Recording from "./models/recording";
 
 class SoundManager {
 
-  static play() {
-    var records = document.querySelectorAll("audio")
+  static play(records) {
     for (let record of records) {
-      var audio = new Audio(record.src);
-      audio.play();
+      record.play();
     }
   }
 
@@ -20,12 +18,8 @@ class SoundManager {
     window.recorder.stop()
   }
   // Example from here https://air.ghost.io/recording-to-an-audio-file-using-html5-and-js/
-  static createAudioElement(blobUrl) {
-    const downloadEl = document.createElement('a');
-    downloadEl.style = 'display: block';
-    downloadEl.innerHTML = 'download';
-    downloadEl.download = 'audio.webm';
-    downloadEl.href = blobUrl;
+  static createAudioElement(blobUrl, name) {
+    document.querySelector(".record-container")
     const audioEl = document.createElement('audio');
     audioEl.controls = true;
     const sourceEl = document.createElement('source');

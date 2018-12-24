@@ -10,7 +10,7 @@ config :all_together, AllTogetherWeb.Endpoint,
   http: [port: System.get_env("PORT") || 4000],
   debug_errors: true,
   https: [
-    port: 4001,
+    port: System.get_env("HTTPS_PORT") || 4001,
     cipher_suite: :strong,
     certfile: "priv/cert/selfsigned.pem",
     keyfile: "priv/cert/selfsigned_key.pem"
