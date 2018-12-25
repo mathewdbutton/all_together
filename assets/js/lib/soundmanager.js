@@ -1,6 +1,4 @@
-import IndexPage from "./index_page";
-import Recording from "./models/recording";
-
+import Recording from "../models/recording";
 
 class SoundManager {
 
@@ -10,8 +8,8 @@ class SoundManager {
     }
   }
 
-  static record() {
-    SoundManager.start_recording();
+  static record(recordingName) {
+    SoundManager.start_recording(recordingName);
   }
 
   static stop() {
@@ -30,7 +28,8 @@ class SoundManager {
     document.body.appendChild(downloadEl);
   }
 
-  static start_recording() {
+  static start_recording(recordingName) {
+    console.log(recordingName)
     navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
       // store streaming data chunks in array
       const chunks = [];
@@ -44,7 +43,6 @@ class SoundManager {
         chunks.push(e.data);
         // if recorder is 'inactive' then recording has finished
         if (recorder.state == 'inactive') {
-          var recordingName = IndexPage.getRecordName();
           var fileName = recordingName + ".webm"
           // convert stream data chunks to a 'webm' audio format as a blob
           const blob = new Blob(chunks, { type: 'audio/webm' });

@@ -9,10 +9,9 @@ import css from "../css/app.css"
 //
 // Import dependencies
 //
-import "phoenix_html"
-import IndexPage from "./index_page"
 
-window.indexPage = IndexPage
+import stimulusInit from "./init/stimulus_init";
+
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
