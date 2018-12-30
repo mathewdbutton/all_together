@@ -6,6 +6,7 @@ defmodule AllTogether.Repo.Migrations.CreateRecordings do
       add :id, :binary_id, primary_key: true
       add :name, :string
       add :path, :string
+      add :song_id, references(:songs, type: :binary_id, on_delete: :delete_all)
 
       timestamps()
     end

@@ -4,8 +4,8 @@ defmodule AllTogetherWeb.RecordingController do
 
   import Ecto
 
-  def create(conn, %{"name" => name, "path" => path}) do
-    Repo.insert(%Recording{path: path, name: name})
+  def create(conn, %{"name" => name, "path" => path, "song_id" => song_id}) do
+    Repo.insert(%Recording{path: path, name: name, song_id: song_id})
     render conn, create: "create"
   end
 

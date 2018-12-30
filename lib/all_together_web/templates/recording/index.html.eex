@@ -1,0 +1,9 @@
+<div data-controller="index">
+  <div class="record-container">
+  <%= for record <- @recordings do %>
+    <p class="recording-name"><%= record.name %></p>
+    <audio data-target="index.recording" class="recording" src="https://s3-ap-southeast-2.amazonaws.com/all-together-now/<%= record.path %>" controls>
+    </audio>
+  <% end %>
+  </div>
+</div>

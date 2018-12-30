@@ -3,7 +3,7 @@ defmodule AllTogetherWeb.PageController do
   alias AllTogether.{Repo, Recording}
 
   def index(conn, _params) do
-    render(conn, "index.html", recordings: Repo.all(Recording), csrf: get_csrf_token())
+    render(conn, "index.html")
   end
 
 end

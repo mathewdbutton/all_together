@@ -16,11 +16,15 @@ defmodule AllTogetherWeb.Router do
   scope "/", AllTogetherWeb do
     pipe_through :browser
     get "/", PageController, :index
+    resources "/songs", SongController
   end
 
   scope "/", AllTogetherWeb do
     pipe_through :api
-    post "/record", RecordingController, :create
+    resources "/songs", SongController do
+      post "/record", RecordingController, :create
+    end
+    
     post "/upload_url", RecordingController, :upload_url
   end
 end

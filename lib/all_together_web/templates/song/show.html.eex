@@ -1,0 +1,17 @@
+<h1>Show Song</h1>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @song.name %>
+  </li>
+</ul>
+
+<h2> Saved Recordings </h2>
+<%= render(AllTogetherWeb.RecordingView,"index.html", recordings: @song.recordings ) %>
+
+<h2> Add a recording </h2>
+<%= render(AllTogetherWeb.RecordingView,"create.html") %>
+
+<span><%= link "Edit", to: Routes.song_path(@conn, :edit, @song) %></span>
+<span><%= link "Back", to: Routes.song_path(@conn, :index) %></span>

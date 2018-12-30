@@ -1,0 +1,10 @@
+<div data-controller="index">
+  <form id="csrf-tag" enctype="multipart/form-data" method="GET">
+    <input type="text" data-target="index.recordName" id="record-name">
+    <input type="file" name="my_file" multiple="multiple" />
+  </form>
+
+  <button data-action="index#playAllRecordings"> Play All </button>
+  <button class="button-outline" data-action="index#startRecording"> Hit it! </button>
+  <button class="button-outline" data-action="index#stopRecording"> Stop! </button>
+</div>

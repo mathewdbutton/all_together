@@ -3,7 +3,7 @@ import axios from "axios"
 class Recording {
 
   static add(path, name, csrf) {
-    axios.post('/record', {
+    axios.post(location.pathname + '/record', {
       path: path,
       name: name
     }, {
